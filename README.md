@@ -29,7 +29,8 @@ An authenticaed user that has been granted access to the REST API can list the f
 	"Healthcare News" : "", 
 	"Autism": ""
 	}
-}```
+}
+```
 The Key corresponds to the human-readable name of the dfeed, and the value corresponds to the unique identifier of the feed, or widget ID. 
 
 Retreiving items from feeds
@@ -48,7 +49,8 @@ A successful request will return a `200` response along with a JSON object with 
 	"thumbnailURL": "",
 	"date": "",
 	"widgetID": "" 
-}```
+}
+```
 
 
 
