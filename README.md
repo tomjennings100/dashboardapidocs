@@ -21,6 +21,9 @@ This key is included in the HTTP header in the call made as follows:
 
 To prevent abuse, we require you to enter the public IP of the servers you wish to interface with the API in your profile. 
 
+Endpoints
+=====
+
 Listing Available Feeds
 ----
 ####`/widgets`
