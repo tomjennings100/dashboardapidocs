@@ -1,6 +1,8 @@
 Curation Dashboard Public API
 ======
-API
+Requirements
+======
+Format
 ---
 The Curation Dashboard Public API can be accessed via the following base URI
 
@@ -17,12 +19,12 @@ This key is included in the HTTP header in the call made as follows:
 
 ```Authorization: Basic [INSERT KEY HERE]```
 
-To prevent denial of service attacks, we require you to enter the public IP of the servers you wish to interface with the API in your profile. 
+To prevent abuse, we require you to enter the public IP of the servers you wish to interface with the API in your profile. 
 
 Listing Available Feeds
 ----
 ####`/widgets`
-An authenticaed user that has been granted access to the REST API can list the feeds they are permissioned on by issuing a GET request to `/widgets`.  A `200 ` response will be issued along with a JSON object of widgets, as follows: 
+An authenticated user that has been granted access to the REST API can list the feeds they are permissioned on by issuing a GET request to `/widgets`.  A `200 ` response will be issued along with a JSON object of widgets, as follows: 
 ```
 {
 	"widgets" : {
@@ -35,10 +37,10 @@ An authenticaed user that has been granted access to the REST API can list the f
 ```
 The Key corresponds to the human-readable name of the feed, and the value corresponds to the unique identifier of the feed, or widget ID. 
 
-Retreiving items from feeds
+Retrieving items from feeds
 ----
 ####`/widgets/items/:widgetID[s]`
-An authenticated user can retrieve items from a feed/feeds by issuing an HTTP GET request to `/widgets/items/` along with the relevant widget IDs, retreived from `/widgets`. A user can issue many requests with a single ID or one request with many comma-separated IDs, for example: 
+An authenticated user can retrieve items from a feed/feeds by issuing an HTTP GET request to `/widgets/items/` along with the relevant widget IDs, retrieved from `/widgets`. A user can issue many requests with a single ID or one request with many comma-separated IDs, for example: 
    
 	GET /widgets/items/abc,123,def,456
 
