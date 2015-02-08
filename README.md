@@ -10,6 +10,8 @@ The Curation Dashboard Public API can be accessed via the following base URI
 
 All routes given in this documentation are relative to this base route. Note that unlike the Dashboard itself, the Public API only accepts connections over `https://`. 
 
+All responses are given in `JSON`. 
+
 Authentication
 ----
 Curation Dashboard's Public API uses HTTP Basic Access Authentication to ensure only correctly permissioned users are given access to the feeds they are allowed to read. 
@@ -17,7 +19,7 @@ Curation Dashboard's Public API uses HTTP Basic Access Authentication to ensure 
 Each API call made to Curation Dashboard is authenticated with a key generated on a per-user basis. Users' keys may be found on their profile page after logging in to Dashboard. 
 This key is included in the HTTP header in the call made as follows: 
 
-```Authorization: Basic [INSERT KEY HERE]```
+```Authorization: Token [INSERT KEY HERE]```
 
 To prevent abuse, we require you to enter the public IP of the servers you wish to interface with the API in your profile. 
 
@@ -49,15 +51,26 @@ An authenticated user can retrieve items from a feed/feeds by issuing an HTTP GE
 
 A successful request will return a `200` response along with a JSON object with an array of items from the requested widgets, ordered by descending date, as follows: 
 
+`title`: *string* The title text of an item.
+`searchtext`: *string* An extract of the item. 
+`thumbnailUrl`: [optional] *string* A URL to an image of the item. This is a hotlink to the original image from the source. 
+`date`: *string*
+`link`: *string* A link to the item. 
+`source`: *string* A human readable name of the item's source.
+
 ```
 {
 	"title": "", 
-	"content": "", 
-	"thumbnailURL": "",
+	"searchtext": "", 
+	"thumbnailUrl": "",
 	"date": "",
+	"link": ""
+	"sourceName": "", 
+	"sourceUrl": "", 
 	"widgetID": "" 
 }
 ```
+
 
 
 
