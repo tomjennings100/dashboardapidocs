@@ -58,12 +58,15 @@ A successful request will return a `200` response along with a JSON object with 
 |`thumbnailUrl`| [optional] *string* | A URL to an image of the item. This is a hotlink to the original image from the source. |
 |`published` | *string* | The UTC publish date and time of the item, in ISO 8601 format. If the publish date is not available, this reverts to the date the item arrived in the database.  |
 |`link` | *string* | A link to the item. |
-|`source`| *string* | A human readable name of the item's source.|
+|`sourceName`| *string* | A human readable name of the item's source.|
+|`sourceUrl`| *string* | A link to the item's source |
 |`widgetID` | *string* | The ID of the widget, referenced in `/widgets` |
 
 ```
 
 An example response object
+
+
 
 {
 	"title": "New Hamilton contract will happen says Lauda", 
