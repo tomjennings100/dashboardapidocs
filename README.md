@@ -51,14 +51,15 @@ An authenticated user can retrieve items from a feed/feeds by issuing an HTTP GE
 
 A successful request will return a `200` response along with a JSON object with an array of items from the requested widgets, ordered by descending date, as follows: 
 
-|Property Name | Type | Description |
+|Property | Type | Description |
 |--------------|------|------------|
 |`title` | *string* |The title text of an item.|
 |`searchtext` | *string* | An extract of the item.|
 |`thumbnailUrl`| [optional] *string* | A URL to an image of the item. This is a hotlink to the original image from the source. |
-|`date` | *string* | word |
+|`date` | *string* | The UTC publish date and time of the item, in ISO 8601 format. If the publish date is not available, this reverts to the date the item arrived in the database.  |
 |`link` | *string* | A link to the item. |
-|`source`| *string* |A human readable name of the item's source.|
+|`source`| *string* | A human readable name of the item's source.|
+|`widgetID` | *string* | The ID of the widget, referenced in `/widgets` |
 
 ```
 {
