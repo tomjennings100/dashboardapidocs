@@ -6,7 +6,7 @@ Format
 ---
 The Curation Dashboard Public API can be accessed via the following base URI
 
-`https://polka-api.curationcorp.com/api/1`
+`https://polka-api.curationcorp.com/polka`
 
 All routes given in this documentation are relative to this base route. Note that unlike the Dashboard itself, the Public API only accepts connections over `https://`. 
 
@@ -59,21 +59,24 @@ A successful request will return a `200` response along with a JSON object with 
 |`link` | *string* | A link to the item. |
 |`widgetID` | *string* | The ID of the widget, referenced in `/widgets` |
 
+
+***An example response object***
+
 ```
-
-An example response object
-
-
-
 {
-	"title": "New Hamilton contract will happen says Lauda", 
-	"description": "New Hamilton contract will happen says Lauda JANUARY 8, 2015    \r\n \r\n    \r\nNiki Lauda has played down the chance Fernando Alonso will join Mercedes next year....", 
-	"thumbnailUrl": "",
-	"published": "2015-01-08T14:56:55.000Z",
-	"link": "http://www.grandprix.com/ns/ns29732.html"
-	"sourceName": "grandprix.com", 
-	"sourceUrl": "http://grandprix.com", 
-	"widgetID": "54ae9c88b01f950d311e6abd" 
+    "Items": {
+        "displayName": "Items",
+        "widgetId": "54591d9275001d7d14fa3416,
+        "values":[
+		    "_id": "54eaff6fd90478e413fd0add",
+		    "link": "http://example.com/test/1424686920",
+		    "description": "Adipisicing elit aliqua occaecat occaecat Lorem duis et ullamco duis adipisicing.",
+		    "title": "Lorem ipsum 2015-02-23T10:22:00+00:00",
+		    "published": "2015-02-23T10:22:00.000Z",
+		    "enclosures": []
+		    ]
+	    }
+	}
 }
 ```
 
