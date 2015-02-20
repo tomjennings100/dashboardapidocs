@@ -6,7 +6,7 @@ Format
 ---
 The Curation Dashboard Public API can be accessed via the following base URI
 
-`https://dashboard.curationcorp.com/api/1`
+`https://polka-api.curationcorp.com/api/1`
 
 All routes given in this documentation are relative to this base route. Note that unlike the Dashboard itself, the Public API only accepts connections over `https://`. 
 
@@ -21,7 +21,7 @@ This key is included in the HTTP header in the call made as follows:
 
 ```Authorization: Token [INSERT KEY HERE]```
 
-To prevent abuse, we require you to enter the public IP of the servers you wish to interface with the API in your profile. 
+<!-- To prevent abuse, we require you to enter the public IP of the servers you wish to interface with the API in your profile.  -->
 
 Endpoints
 =====
@@ -45,7 +45,7 @@ The Key corresponds to the human-readable name of the feed, and the value corres
 Retrieving items from feeds
 ----
 ####`/widgets/items/:widgetID[s]`
-An authenticated user can retrieve items from a feed/feeds by issuing an HTTP GET request to `/widgets/items/` along with the relevant widget IDs, retrieved from `/widgets`. A user can issue many requests with a single ID or one request with many comma-separated IDs, for example: 
+An authenticated user can retrieve items from a feed/feeds by issuing an HTTP GET request to `/widgets/items/` along with the relevant widget IDs, retrieved from `/widgets`. <!-- A user can issue many requests with a single ID or one request with many comma-separated IDs, for example:  -->
    
 	GET /widgets/items/abc,123,def,456
 
@@ -54,12 +54,12 @@ A successful request will return a `200` response along with a JSON object with 
 |Property | Type | Description |
 |--------------|------|------------|
 |`title` | *string* |The title text of an item.|
-|`searchtext` | *string* | An extract of the item.|
-|`thumbnailUrl`| [optional] *string* | A URL to an image of the item. This is a hotlink to the original image from the source. |
+|`description` | *string* | An extract of the item.|
+<!-- |`thumbnailUrl`| [optional] *string* | A URL to an image of the item. This is a hotlink to the original image from the source. | -->
 |`published` | *string* | The UTC publish date and time of the item, in ISO 8601 format. If the publish date is not available, this reverts to the date the item arrived in the database.  |
 |`link` | *string* | A link to the item. |
-|`sourceName`| *string* | A human readable name of the item's source.|
-|`sourceUrl`| *string* | A link to the item's source |
+<!-- |`sourceName`| *string* | A human readable name of the item's source.|
+|`sourceUrl`| *string* | A link to the item's source | -->
 |`widgetID` | *string* | The ID of the widget, referenced in `/widgets` |
 
 ```
@@ -70,7 +70,7 @@ An example response object
 
 {
 	"title": "New Hamilton contract will happen says Lauda", 
-	"searchtext": "New Hamilton contract will happen says Lauda JANUARY 8, 2015    \r\n \r\n    \r\nNiki Lauda has played down the chance Fernando Alonso will join Mercedes next year....", 
+	"description": "New Hamilton contract will happen says Lauda JANUARY 8, 2015    \r\n \r\n    \r\nNiki Lauda has played down the chance Fernando Alonso will join Mercedes next year....", 
 	"thumbnailUrl": "",
 	"published": "2015-01-08T14:56:55.000Z",
 	"link": "http://www.grandprix.com/ns/ns29732.html"
