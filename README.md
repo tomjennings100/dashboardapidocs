@@ -2,6 +2,9 @@ Curation Dashboard Public API
 ======
 Requirements
 ======
+Administration
+---
+
 Format
 ---
 The Curation Dashboard Public API can be accessed via the following base URI
@@ -32,12 +35,14 @@ Listing Available Feeds
 An authenticated user that has been granted access to the REST API can list the feeds they are permissioned on by issuing a GET request to `/widgets`.  A `200 ` response will be issued along with a JSON object of widgets, as follows: 
 ```
 {
-	"widgets" : {
-		"values": 
-			[
-				"Lorem Ipsum": "54591d9275001d7d14fa3416"
-			]
-	}
+    "Widgets": {
+        "displayName": "Widgets",
+        "values": [
+            {
+                "Lorem RSS": "54591d9275001d7d14fa3416"
+            }
+        ]
+    }
 }
 ```
 The Key corresponds to the human-readable name of the feed, and the value corresponds to the unique identifier of the feed, or widget ID. 
