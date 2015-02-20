@@ -33,10 +33,10 @@ An authenticated user that has been granted access to the REST API can list the 
 ```
 {
 	"widgets" : {
-	"Interoperability" : "",
-	"Healthcare Costs" : "", 
-	"Healthcare News" : "", 
-	"Autism": ""
+		"values": 
+			[
+				"Lorem Ipsum": "54591d9275001d7d14fa3416"
+			]
 	}
 }
 ```
@@ -44,12 +44,12 @@ The Key corresponds to the human-readable name of the feed, and the value corres
 
 Retrieving items from feeds
 ----
-####`/widgets/items/:widgetID[s]`
-An authenticated user can retrieve items from a feed/feeds by issuing an HTTP GET request to `/widgets/items/` along with the relevant widget IDs, retrieved from `/widgets`. <!-- A user can issue many requests with a single ID or one request with many comma-separated IDs, for example:  -->
+####`/widgets/items/:widgetId`
+An authenticated user can retrieve items from a feed/feeds by issuing an HTTP GET request to `/widget/:widgetId/` along with the relevant widget IDs, retrieved from `/widgets`. <!-- A user can issue many requests with a single ID or one request with many comma-separated IDs, for example:  -->
    
-	GET /widgets/items/abc,123,def,456
+	GET /widget/:*widget ID*
 
-A successful request will return a `200` response along with a JSON object with an array of items from the requested widgets, ordered by descending date, as follows: 
+A successful request will return a `200` response along with a JSON object with an array of items from the requested widget, ordered by descending date, as follows: 
 
 |Property | Type | Description |
 |--------------|------|------------|
