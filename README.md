@@ -1,9 +1,13 @@
 Curation Dashboard Public API
 ======
+---
 Requirements
 ======
 Administration
 ---
+Administration of API keys is handled by administrators of the Curation Dashboard system, if you would like a further API key, please contact [dashboard@curationcorp.com](mailto:dashboard@curationcorp.com). 
+
+Users with access to the API are given API access to certain widgets within the Dashboard by administrators. 
 
 Format
 ---
@@ -19,10 +23,11 @@ Authentication
 ----
 Curation Dashboard's Public API uses HTTP Basic Access Authentication to ensure only correctly permissioned users are given access to the feeds they are allowed to read. 
 
-Each API call made to Curation Dashboard is authenticated with a key generated on a per-user basis. Users' keys may be found on their profile page after logging in to Dashboard. 
+Each API call made to Curation Dashboard is authenticated with a key generated on a per-user basis. Curation will provide you with an API key. 
+
 This key is included in the HTTP header in the call made as follows: 
 
-```Authorization: Token [INSERT KEY HERE]```
+```Authorization: Token [INSERT API KEY]```
 
 <!-- To prevent abuse, we require you to enter the public IP of the servers you wish to interface with the API in your profile.  -->
 
@@ -32,7 +37,7 @@ Endpoints
 Listing Available Feeds
 ----
 ####`/widgets`
-An authenticated user that has been granted access to the REST API can list the feeds they are permissioned on by issuing a GET request to `/widgets`.  A `200 ` response will be issued along with a JSON object of widgets, as follows: 
+An authenticated user that has been granted access to the REST API can list the feeds they are permissioned on by issuing a GET request to `/widgets`.  A `200 ` response will be issued along with an array of widgets, as follows: 
 ```
 {
     "Widgets": {
@@ -52,7 +57,7 @@ Retrieving items from feeds
 ####`/widgets/items/:widgetId`
 An authenticated user can retrieve items from a feed/feeds by issuing an HTTP GET request to `/widget/:widgetId/` along with the relevant widget IDs, retrieved from `/widgets`. <!-- A user can issue many requests with a single ID or one request with many comma-separated IDs, for example:  -->
    
-	GET /widget/:*widget ID*
+	GET /widget/:widget ID
 
 A successful request will return a `200` response along with a JSON object with an array of items from the requested widget, ordered by descending date, as follows: 
 
@@ -62,9 +67,7 @@ A successful request will return a `200` response along with a JSON object with 
 |`description` | *string* | An extract of the item.|
 |`published` | *string* | The UTC publish date and time of the item, in ISO 8601 format. If the publish date is not available, this reverts to the date the item arrived in the database.  |
 |`link` | *string* | A link to the item. |
-|`widgetID` | *string* | The ID of the widget, referenced in `/widgets` |
-
-
+---
 ***An example response object***
 
 ```
@@ -84,9 +87,3 @@ A successful request will return a `200` response along with a JSON object with 
 	}
 }
 ```
-
-
-
-
-
-
