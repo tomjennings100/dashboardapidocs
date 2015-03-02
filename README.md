@@ -54,7 +54,7 @@ The Key corresponds to the human-readable name of the feed, and the value corres
 
 Retrieving items from feeds
 ----
-####`/widgets/items/:widgetId`
+####`/widgets/:widgetId`
 An authenticated user can retrieve items from a feed/feeds by issuing an HTTP GET request to `/widget/:widgetId/` along with the relevant widget IDs, retrieved from `/widgets`. <!-- A user can issue many requests with a single ID or one request with many comma-separated IDs, for example:  -->
    
 	GET /widget/:widget ID
@@ -67,6 +67,7 @@ A successful request will return a `200` response along with a JSON object with 
 |`description` | *string* | An extract of the item.|
 |`published` | *string* | The UTC publish date and time of the item, in ISO 8601 format. If the publish date is not available, this reverts to the date the item arrived in the database.  |
 |`link` | *string* | A link to the item. |
+|`enclosures`| *array* | A hotlink to image files associated with the item. This array is reserved for future expansion to include other media, though currently just serves images |
 ---
 ***An example response object***
 
