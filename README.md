@@ -54,7 +54,7 @@ The Key corresponds to the human-readable name of the feed, and the value corres
 
 Retrieving items from feeds
 ----
-####`/widgets/:widgetId`
+####`/widget/:widgetId`
 An authenticated user can retrieve items from a feed/feeds by issuing an HTTP GET request to `/widget/:widgetId/` along with the relevant widget IDs, retrieved from `/widgets`. <!-- A user can issue many requests with a single ID or one request with many comma-separated IDs, for example:  -->
    
 	GET /widget/:widget ID
