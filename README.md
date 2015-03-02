@@ -57,7 +57,7 @@ Retrieving items from feeds
 ####`/widget/:widgetId`
 An authenticated user can retrieve items from a feed/feeds by issuing an HTTP GET request to `/widget/:widgetId/` along with the relevant widget IDs, retrieved from `/widgets`. <!-- A user can issue many requests with a single ID or one request with many comma-separated IDs, for example:  -->
    
-	GET /widget/:widget ID
+	GET /widget/:widgetId
 
 A successful request will return a `200` response along with a JSON object with an array of items from the requested widget, ordered by descending date, as follows: 
 
@@ -75,7 +75,7 @@ A successful request will return a `200` response along with a JSON object with 
 {
     "Items": {
         "displayName": "Items",
-        "widgetId": "54591d9275001d7d14fa3416,
+        "widgetId": "54591d9275001d7d14fa3416",
         "values":[
 		    "_id": "54eaff6fd90478e413fd0add",
 		    "link": "http://example.com/test/1424686920",
