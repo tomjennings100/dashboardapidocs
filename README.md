@@ -67,7 +67,8 @@ A successful request will return a `200` response along with a JSON object with 
 |`description` | *string* | An extract of the item.|
 |`published` | *string* | The UTC publish date and time of the item, in ISO 8601 format. If the publish date is not available, this reverts to the date the item arrived in the database.  |
 |`link` | *string* | A link to the item. |
-|`enclosures`| *array* | An arrary of objects that include a hotlink to image files associated with the item (`url`) and the filetype of the image (`type`. This array is reserved for future expansion to include other media, though currently just serves images |
+|`enclosures`| *array* | An arrary of objects that include a hotlink to image files associated with the item (`url`) and the filetype of the image (`type`). This array is reserved for future expansion to include other media, though currently just serves images |
+|`source`| *string* | The hostname of the item's source|
 ---
 ***An example response object***
 
@@ -86,7 +87,8 @@ A successful request will return a `200` response along with a JSON object with 
                     "url": "http://assets.fiercemarkets.net/public/opengraphimages/updated/opengraph_fiercemedicaldevices.jpg",
                     "type": "image/jpeg"
                     ]
-		    ]
+		    ], 
+            "source": "example.com"
 	    }
 	}
 }
