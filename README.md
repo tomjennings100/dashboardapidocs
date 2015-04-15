@@ -112,7 +112,7 @@ An authenticated user that has been granted access to the REST API can list the 
     }
 }
 ```
-Listing Dashboard
+Listing a single Dashboard
 ----
 ####`/dashboard/:dashboardId`
 An authenticated user that has been granted access to the REST API can get a dashboard and the complete data associated with the dashboard by issuing a GET request to `/dashboard/:dashboardId`.  A `200 ` response will be issued along with dashboard and its data, as follows: 
