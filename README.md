@@ -91,3 +91,70 @@ A successful request will return a `200` response along with a JSON object with 
 	}
 }
 ```
+Listing Available Dashboards
+----
+####`/dashboards`
+An authenticated user that has been granted access to the REST API can list the dashboards they are permissioned on by issuing a GET request to `/dashboards`.  A `200 ` response will be issued along with an array of dashboards, as follows: 
+```
+{
+    "Dashboards": {
+        "displayName": "Dashboards",
+        "values": [
+            {
+                _id: "54591d9275001d7d14fa3416",
+                user: "54591d9275001d7d14fa3416",
+                widgets: [
+                "54591d9275001d7d14fa3416",
+                "54591d9275001d7d14fa3416"
+                ]
+            }
+        ]
+    }
+}
+```
+Listing Dashboard
+----
+####`/dashboard/:dashboardId`
+An authenticated user that has been granted access to the REST API can get a dashboard and the complete data associated with the dashboard by issuing a GET request to `/dashboard/:dashboardId`.  A `200 ` response will be issued along with dashboard and its data, as follows: 
+```
+{
+    Dashboard: {
+        displayName: "Dashboard",
+        dashboardId: "54591d9275001d7d14fa3416",
+        values: {
+            __v: 0,
+            _id: "54591d9275001d7d14fa3416",
+            columns: 5,
+            user: "54591d9275001d7d14fa3416",
+            panel: {
+                name: "6 Column Panel",
+                layout: [
+                    [{
+                        exp: 2,
+                        open: false,
+                        tot: 4,
+                        widgetid: "",
+                        keywords: [],
+                        header: "Oil and Gas",
+                        content: "",
+                        wuid: 1403891928392,
+                        percOpen: 50
+                    }],
+                    [{
+                        exp: 2,
+                        open: false,
+                        tot: 4,
+                        widgetid: "",
+                        keywords: [],
+                        header: "Oil and Gas",
+                        content: "",
+                        wuid: 1403891928392,
+                        percOpen: 50
+                    }]
+                ]
+            }
+        }
+    }
+}
+
+```
